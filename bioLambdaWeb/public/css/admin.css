@@ -1,0 +1,140 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.title{
+    background-color:rgb(210,210,210);padding:0.4em;
+}
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+.form-control{
+    margin:2em 2em 0 2em;
+    
+}
+table img{
+    width:10em;
+}
+
+input[type='file'] {
+    margin:1em 30px;
+    width:50%;
+}
+#navs_language{
+    height:2.5em;
+    margin-top:1.1em;
+    width:5em;
+}
+body form{
+    width:90%;
+}
+form{
+    float:left;
+    flex-direction: row;
+}
+input[type='file'] label {
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+    padding: 6px 20px
+  }
+
+.table{
+    margin-top:2em;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+dl, ol, ul{
+    list-style: none;
+}
+
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    
+    
+    color: #fff;
+    transition: all 0.3s;
+    background:linear-gradient(45deg,black, #585858, rgb(206, 206, 206));
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #585858;
+
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #484340;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color:white;
+}
+#sidebar ul li a:hover {
+    color: #484340;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: darkorange;
+    background: #484340;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #585858;
+    color:white;
+    font-size:25px;
+}
+
+footer {
+    width:100%
+}
+footer p{
+    text-align: center;
+}

@@ -1,0 +1,65 @@
+{% extends "/admin/base.html.twig" %}
+
+{% block body %}
+    <!-- Our Custom CSS -->
+
+    <div class="row">
+        <div class="col-3">
+            {% include "/admin/articles/header.html.twig" %}
+        </div>
+        <div class="col">
+            <h1 class="title">Barra de navegação</h1>
+                    {{ form_start(form) }}
+                    <div class="row" >
+                        {{ form_row(form.field01) }}
+                        {{ form_row(form.field02) }}
+                        {{ form_row(form.field03) }}
+                    </div>
+                    <div class="row" >
+                        {{ form_row(form.field04) }}
+                        {{ form_row(form.field05) }}
+                        {{ form_row(form.field06) }}
+                    </div>
+                    <div class="row">
+                        {{ form_row(form.field07) }}
+                        {{ form_row(form.field08) }}
+                        {{ form_row(form.field09) }}
+                        {{ form_widget(form.logo) }}
+                        {{ form_widget(form.language) }}
+                     </div>     
+                        
+                    {{ form_end(form) }}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Logo</th>
+                        <th scope="col">Navegador</th>
+                        <th scope="col">Linguagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for value in values %}
+                        <tr>
+                            <th><img src="\uploads\navs\{{ value.logo }}" style="width:6em;height:6em;"></th>
+                            <td style=" text-align: justify;">
+                            {{ value.field01 }}
+                            {{ value.field02 }}
+                            {{ value.field03 }}
+                            {{ value.field04 }}
+                            {{ value.field05 }}
+                            {{ value.field06 }}
+                            {{ value.field07 }}
+                            {{ value.field08 }}
+                            {{ value.field09 }}</td>
+                            <td style=" text-align: center;">{{ value.language }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+{% include "/admin/articles/footer.html.twig" %}
+
+{% endblock %}
+

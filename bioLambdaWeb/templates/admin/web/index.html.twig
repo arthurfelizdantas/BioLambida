@@ -1,0 +1,45 @@
+{% extends "/admin/base.html.twig" %}
+
+{% block body %}
+    <!-- Our Custom CSS -->
+
+    <div class="row">
+        <div class="col-3">
+            {% include "/admin/articles/header.html.twig" %}
+        </div>
+        <div class="col">
+            <div class="row">
+                        <div class="col">
+                            <h2>Números de cadastros</h2>
+                            <h3>0</h3>
+                        </div>
+                        <div class="col">
+                            <h2>Números de mensagens</h2>
+                            <h3>0</h3>
+                        </div>
+            </div>
+                   <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+     
+ 
+{% include "/admin/articles/footer.html.twig" %}
+
+{% endblock %}
+

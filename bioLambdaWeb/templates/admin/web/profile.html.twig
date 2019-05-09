@@ -1,0 +1,89 @@
+{% extends "/admin/base.html.twig" %}
+
+{% block body %}
+    <!-- Our Custom CSS -->
+
+    <div class="row">
+        <div class="col-3">
+            {% include "/admin/articles/header.html.twig" %}
+        </div>
+
+        <div class="col">
+            <h1 class="title">Perfil</h1>
+            {{ form_start(form) }}
+            <div class="row">
+                {{ form_row(form.phone) }}
+                {{ form_row(form.address) }}
+                {{ form_row(form.mobile) }}
+              
+                {{ form_row(form.urlFacebook) }}
+                {{ form_row(form.urlRG) }}
+                {{ form_row(form.urlInstagram) }}
+                {{ form_row(form.urlLinkedIn) }}
+   
+            </div>
+            <div class="row">
+            <div class="col-6">
+                {{ form_row(form.logoLinkedIn) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(form.logoFacebook) }}
+              </div>
+              <div class="col-6">
+                  {{ form_row(form.logoRG) }}
+              </div>
+              <div class="col-6">
+                {{ form_row(form.logoInstagram) }}
+              </div>
+              <div class="col-6">
+                {{ form_row(form.language) }}
+              </div>
+            </div>
+
+            {{ form_end(form) }}
+            </div>
+        </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Telefone</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Celular</th>
+        <th scope="col">Endereços</th>
+        <th scope="col">Linguagem</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for value in values %}
+
+        <tr>
+
+            <th scope="col">{{ value.phone }}</th>
+            <th scope="col">{{ value.address }}</th>
+            <th scope="col">{{ value.mobile }}</th>
+            <th>{{ value.urlFacebook }}<br/>
+            {{ value.urlRg }}<br/>
+            {{ value.urlLinkedIn }}<br/>
+            {{ value.urlInstagram }}</th>
+            <th scope="col">{{ value.language }}</th>
+        </tr>
+        <tr>
+          <th scope="col">Logos</th>
+
+            <th >
+              <img style="width:8em" src="\uploads\logos\{{value.logoFacebook}}">
+              <img  style="width:8em" src="\uploads\logos\{{value.logoRg}}">
+              <img  style="width:8em" src="\uploads\logos\{{value.logoLinkedIn}}">
+              <img style="width:8em" src="\uploads\logos\{{value.logoInstagram}}">
+            </th>
+
+        </tr>
+      {% endfor %}
+
+    </tbody>
+    </table>
+</div>
+{% include "/admin/articles/footer.html.twig" %}
+
+{% endblock %}
+

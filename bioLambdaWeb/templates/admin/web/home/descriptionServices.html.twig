@@ -1,0 +1,41 @@
+{% extends "/admin/base.html.twig" %}
+
+{% block body %}
+    <!-- Our Custom CSS -->
+
+  <div class="row">
+        <div class="col-3">
+            {% include "/admin/articles/header.html.twig" %}
+        </div>
+        <div class="col">
+            <h1 class="title">Descrição dos serviços</h1>
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+                       <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Título</th>
+                        <th scope="col">Subtítulo</th>
+                        <th scope="col">Texto</th>
+                        <th scope="col">Images</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for value in values %}
+                        <tr>
+                            <th scope="row">{{ value.title }}</th>
+                            <td>{{  value.subtitle }}</td>
+                            <td>{{ value.text }}</td>
+                            <td><img src="\uploads\home\{{ value.photos }}" alt="{{value.title}}"></td>                        
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% include "/admin/articles/footer.html.twig" %}
+
+{% endblock %}
+
